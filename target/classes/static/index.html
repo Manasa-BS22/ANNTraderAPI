@@ -1,0 +1,31 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head>  
+    
+    </head>  
+    <body>  
+     <script>
+    
+    async function makeAPICall(){
+      fetch('http://localhost:8080/ANNTrader/v1/product')
+      .then(res => {
+       return res.json();
+      })
+      .then(data => {
+        console.log(data);
+      	data.forEach(Apparel_Product => {
+            const markup = `<li>${Apparel_Product.product_Name}</li>`;
+            document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+        });
+      })
+      .catch(error => console.log(error));
+    }
+    </script>
+  
+    <p>Click the following button to see the function in action</p>  
+	<input type = "button" onclick = "makeAPICall()" value = "Display">
+
+    Products :
+    <ul></ul>
+    </body>  
+    </html>  

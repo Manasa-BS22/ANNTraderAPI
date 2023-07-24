@@ -1,0 +1,212 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: SASI Wrapper Services
+  description: Wrapper services to be utilized by the OC to access various systems that don't conform to JSON RESTful services
+schemes:
+  - http
+basePath: /wrappers/
+paths:
+  '/ANNTrader/product':
+    post:
+      tags:
+        - ANNTrader
+      summary: Fetch the product
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: Request body
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+          
+  '/ANNTrader/apparelproduct':
+    post:
+      tags:
+        - ANNTrader
+      summary: Fetch the product
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: Request body
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error 
+        
+  '/ANNTrader/sportingproduct':
+    post:
+      tags:
+        - ANNTrader
+      summary: Fetch the product
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: Request body
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error  
+          
+  '/ANNTrader/deleteproduct':
+    post:
+      tags:
+        - ANNTrader
+      summary: Fetch the product
+      parameters:
+        - in: query
+          name: productid
+          description: product ID
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          description: Request body
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error 
+          
+  '/ANNTrader/searchproduct':
+    post:
+      tags:
+        - ANNTrader
+      summary: Fetch the product
+      parameters:
+        - in: query
+          name: productname
+          description: product Name
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          description: Request body
+          schema:
+            $ref: '#/definitions/product'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error        
+  
+  '/ANNTrader/updateProduct': 
+    post: 
+      tags: 
+        - ANNTrader 
+      summary: update the products for given inputs 
+      parameters: 
+        - in: body
+          name: body
+          description: update the products for given inputs
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateProductRequest'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+          
+  '/ANNTrader/addProduct': 
+    post: 
+      tags: 
+        - ANNTrader 
+      summary: update the products for given inputs 
+      parameters: 
+        - in: body
+          name: body
+          description: update the products for given inputs
+          required: true
+          schema:
+            $ref: '#/definitions/addProductRequest'
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/product'
+        '404':
+          description: Not found
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error  
+            
+            
+definitions:
+  UpdateProductRequest:
+    properties:
+      productid:
+        type: int
+      productname:
+        type: string
+      price:
+        type: int
+      description:
+        type: string
+        
+  addProductRequest: 
+    properties:
+      productid:
+        type: int
+      productname:
+        type: string
+      price:
+        type: int
+      description:
+        type: string
+      type:
+        type: String             
