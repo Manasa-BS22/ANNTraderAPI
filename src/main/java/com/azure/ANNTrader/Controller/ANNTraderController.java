@@ -45,7 +45,7 @@ public class ANNTraderController {
 	return products;  
 	}  
 	
-	@GetMapping(value = "/apparelproduct")
+	/*@GetMapping(value = "/apparelproduct")
 	@ApiOperation(value = "apparelproduct")
 	public List<Product> getApparelProduct()   
 	{  
@@ -99,7 +99,7 @@ public class ANNTraderController {
 	int products = annTraderService.addProduct(addProductRequest.getProductid(), addProductRequest.getName(), 
 			addProductRequest.getPrice(), addProductRequest.getDescription(), addProductRequest.getType());  
 	return products;  
-	}  
+	}  */
 
 }
 
