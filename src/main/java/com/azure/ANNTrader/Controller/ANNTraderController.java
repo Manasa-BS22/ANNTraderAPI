@@ -26,6 +26,15 @@ public class ANNTraderController {
 	@Autowired  
 	private ANNTraderService annTraderService;  
 	
+	@GetMapping(value = "/test")
+	public String test()   
+	{  
+	//finds all the products  
+	String test = "Testing spring boot";
+	//returns the product list  
+	return test;  
+	}  
+	
 	@GetMapping(value = "/product")
 	@ApiOperation(value = "product")
 	public List<Product> getProduct()   
